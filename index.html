@@ -1,0 +1,47 @@
+<html>
+<head>
+<!-- Load c3.css -->
+<link href="libs/c3-0.4.11/c3.css" rel="stylesheet" type="text/css">
+
+<!-- Load d3.js and c3.js -->
+<script src="libs/d3-3.5.6.js"></script>
+<script src="libs/c3-0.4.11/c3.min.js"></script>
+<script src="libs/jquery.min.js"></script>
+
+<script>
+$( document ).ready(function() {
+   
+        $.get("data.json", function(data, status){
+            //alert("Data: " + data + "\nStatus: " + status);
+            
+createChart(data);
+        });
+    
+});
+
+function createChart(data){
+    var chartObj={
+        bindto: '#chart',
+        data: {}
+};
+var columnData=[];
+$.each(data,function(i,item){
+columnData.push(item);
+});
+chartObj.data.columns=columnData;
+var chart = c3.generate(chartObj);
+}
+</script>
+
+</head>
+<body>
+    <div id="chart"></div>
+
+</body>
+<script>
+
+
+
+
+</script>
+</html>
