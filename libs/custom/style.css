@@ -1,0 +1,84 @@
+body{
+           font-family: sans-serif;
+    font-size: 14px;
+   }
+   .trapezoid {
+	border-bottom: 30px solid grey;
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	height: 0px;
+	width: 120px;
+    display:inline-block;
+}
+.trapezoidtext{
+    width: 150px;
+    display:inline-block;
+    text-align:center;
+
+}
+.navbtn{
+    display:inline;
+    position:relative;
+}
+.btnmain{
+   width: 85px;
+    height: 30px;
+    text-align: center;
+    display: inline-block;
+    background: #bfbdbd;
+    position: relative;
+    top: -12px;
+    line-height:25px;
+}
+.left{
+    display:inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #bfbdbd;
+	border-left: 15px solid transparent;
+}
+.right{
+    display:inline-block;
+    width: 0;
+    height: 0;
+    border-bottom: 30px solid #bfbdbd;
+	border-right: 15px solid transparent;
+}
+.main-menu {
+    position: fixed;
+    height: 100%;
+    z-index: 9999;
+    top: 0;
+}
+.main-menu nav {
+    width: 50px;
+    padding: 0;
+    height: 100%;
+    background: #ddd;
+    float: left;
+    margin-top: 0px;
+}
+
+.main-menu nav li {
+    height: 150px;
+    text-align: center;
+    line-height: 15px;
+    list-style: none;
+    width: 50px;
+    /*background:grey*/
+
+}
+.main-menu nav li.active{
+    background:grey;
+}
+
+.main-menu nav li a{
+    text-decoration:none;color:#000;
+}
+.main-menu nav li a div{
+   -ms-transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+      
+}
+ 

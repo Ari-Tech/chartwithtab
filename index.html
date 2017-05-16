@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
 <!-- Load c3.css -->
@@ -7,34 +8,70 @@
 <script src="libs/d3-3.5.6.js"></script>
 <script src="libs/c3-0.4.11/c3.min.js"></script>
 <script src="libs/jquery.min.js"></script>
+<link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="libs/custom/style.css">
 
-<script>
-$( document ).ready(function() {
-   
-        $.get("data.json", function(data, status){
-            //alert("Data: " + data + "\nStatus: " + status);
-            
-createChart(data);
-        });
-    
-});
 
-function createChart(data){
-    var chartObj={
-        bindto: '#chart',
-        data: {}
-};
-var columnData=[];
-$.each(data,function(i,item){
-columnData.push(item);
-});
-chartObj.data.columns=columnData;
-var chart = c3.generate(chartObj);
-}
+<script src="libs/scripts/core.js">
 </script>
 
 </head>
 <body>
+    
+    <section id="navbar" class="main-menu">
+        <nav>
+        	
+        <li class="active navbar-menu" data-role="all">
+        		<a href="./index.html?page=1" class="current" original-title="Level 1-1">
+        			<div>Level 1-1</div>
+        		</a>
+        	</li><li class="navbar-menu" data-role="all">
+        		<a href="./index.html?page=2" class="" original-title="Level 1-2">
+        			<div>Level 1-2</div>
+        		</a>
+        	</li><li class="navbar-menu" data-role="all">
+        		<a href="./index.html?page=3" class="" title="Level 1-3">
+        			<div>Level 1-3</div>
+        		</a>
+        	</li></nav>
+		
+    </section>
+
+<nav style="position: relative;left: 50px;">
+<div class="navbtn">
+    <div class="left"></div>
+    <div class="btnmain"><i class="fa fa-compass" aria-hidden="true"></i>Explore</div>
+    <div class="right"></div>
+</div>
+<div class="navbtn active">
+    <div class="left"></div>
+    <div class="btnmain"><i class="fa fa-search" aria-hidden="true"></i>Query</div>
+    <div class="right"></div>
+</div>
+<div class="navbtn">
+    <div class="left"></div>
+    <div class="btnmain"><i class="fa fa-bar-chart" aria-hidden="true"></i>Compare</div>
+    <div class="right"></div>
+</div>
+<div class="navbtn">
+    <div class="left"></div>
+    <div class="btnmain"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Upload</div>
+    <div class="right"></div>
+</div>
+    
+</nav>
+    <!--<div style="position:absolute;top:15px;">
+        <div class="trapezoidtext">Explore</div>
+        <div class="trapezoidtext">Query</div>
+        <div class="trapezoidtext">Compare</div>
+        <div class="trapezoidtext">Upload</div>
+    </div>
+    <div id="tabholder">
+        <div class="trapezoid"></div>
+        <div class="trapezoid"></div>
+        <div class="trapezoid"></div>
+        <div class="trapezoid"></div>
+    </div>-->
     <div id="chart"></div>
 
 </body>
