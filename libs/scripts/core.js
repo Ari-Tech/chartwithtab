@@ -1,6 +1,6 @@
 function createChart(data){
     var chartObj={
-        bindto: '#chart',
+        bindto: '#chartSection',
         data: {}
 };
 var columnData=[];
