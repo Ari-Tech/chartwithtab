@@ -161,15 +161,20 @@ ul.nav {
   margin:0 auto
 }
 ul.nav li:first-child {
-  padding-top:35px
+  /*padding-top:35px*/
 }
 ul.nav li {
   padding-top:124px;
-  list-style:none
+  list-style:none;
+  margin-top:1px;
+}
+ul.nav li:hover{
+    background:grey;
+    box-shadow:4px 0px 9px 0px #a2a4a5;
 }
 ul.nav li.active{
     background:grey;
-    padding-bottom: 100px;
+    /*padding-bottom: 100px;*/
 }
 ul.nav li a {
   -webkit-transform:rotate(270deg);
@@ -177,7 +182,10 @@ ul.nav li a {
   -o-transform:rotate(270deg);
   float:left;
   width:60px;
-  color:#000
+  color:#000;
+      position: relative;
+    top: -70px;
+    height: 21px;
 }
 .pageSection{
     display:flex;height:100%;
