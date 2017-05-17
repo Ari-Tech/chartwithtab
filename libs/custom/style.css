@@ -12,16 +12,7 @@ position:relative;
     display:inline;
     position:relative;
 }
-.active .btnmain{
-    background:grey;
-    z-index:2;
-}
-.active .left{
-border-bottom: 30px solid grey;z-index:2;
-}
-.active .right{
-    border-bottom: 30px solid grey;z-index:2;
-}
+
 .topNavBtn {
   width: 120px;
   text-align: center;
@@ -34,15 +25,22 @@ border-bottom: 30px solid grey;z-index:2;
       margin-right: -20px;
       z-index:1;
       display:inline-block;
+      cursor:pointer;
 }
+
+.topNavBtn:hover{
+    border-bottom: 30px solid #EBEBEB;
+    z-index:2;
+}
+
 .topNavBtn span { 
    line-height:30px;
   color: #000;
 }
 
 .topNavBtn.active{
-border-bottom: 30px solid #EBEBEB;
-z-index:2;
+    border-bottom: 30px solid #EBEBEB;
+    z-index:2;
 }
 .main-menu {
     position: fixed;
@@ -180,4 +178,7 @@ ul.nav li a {
   float:left;
   width:60px;
   color:#000
+}
+.pageSection{
+    display:flex;height:100%;
 }
