@@ -8,15 +8,18 @@
 <script src="libs/d3-3.5.6.js"></script>
 <script src="libs/c3-0.4.11/c3.min.js"></script>
 <script src="libs/jquery.min.js"></script>
+<!--<script src="libs/angular/angular.min.js"></script>-->
+<script src="libs\angular\angular.min.js"></script>
+
 <link rel="stylesheet" href="libs/font-awesome-4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="libs/custom/style.css">
-
+<link rel="stylesheet" href="libs\scripts\jqwidgets-framework\jqwidgets\styles\jqx.base.css" type="text/css" />
 
 <script src="libs/scripts/core.js">
 </script>
 
 </head>
-<body>
+<body >
     
     <section id="navbar" class="main-menu">
         <nav>
@@ -38,48 +41,34 @@
     </section>
 
 <nav style="position: relative;left: 50px;">
-<div class="navbtn">
-    <div class="left"></div>
-    <div class="btnmain"><i class="fa fa-compass" aria-hidden="true"></i>Explore</div>
-    <div class="right"></div>
-</div>
-<div class="navbtn active">
-    <div class="left"></div>
-    <div class="btnmain"><i class="fa fa-search" aria-hidden="true"></i>Query</div>
-    <div class="right"></div>
-</div>
-<div class="navbtn">
-    <div class="left"></div>
-    <div class="btnmain"><i class="fa fa-bar-chart" aria-hidden="true"></i>Compare</div>
-    <div class="right"></div>
-</div>
-<div class="navbtn">
-    <div class="left"></div>
-    <div class="btnmain"><i class="fa fa-cloud-upload" aria-hidden="true"></i>Upload</div>
-    <div class="right"></div>
-</div>
-    
+    <div class="topNavBtn"><span><i class="fa fa-compass" aria-hidden="true"></i> Explore</span></div>
+    <div class="topNavBtn active"><span><i class="fa fa-search" aria-hidden="true"></i> Query</span></div>
+    <div class="topNavBtn"><span><i class="fa fa-chart" aria-hidden="true"></i> Compare</span></div>
+    <div class="topNavBtn"><span><i class="fa fa-upload" aria-hidden="true"></i> Upload</span></div>
 </nav>
-    <!--<div style="position:absolute;top:15px;">
-        <div class="trapezoidtext">Explore</div>
-        <div class="trapezoidtext">Query</div>
-        <div class="trapezoidtext">Compare</div>
-        <div class="trapezoidtext">Upload</div>
+   
+<div style="display:flex;height:900px;" ng-app="demoapp" ng-controller="chartwithTabController">
+    <div class="leftSection">
+        <div class="innerSect">
+            <span ng-bind="typeLabel"></span>
+            <select ng-model="selectedName" ng-options="iterator for iterator in typeList"></select>
+        </div>
+        <div>
+           <select class="querydropdown" ng-model="queryParameter" ng-options="iterator for iterator in queryList" placeholder="Select to Add Query parameter"></select>
+        </div>
+        <div class="processSection">
+            <div>All Inputs</div>
+            <div>All Outputs</div>
+            <div>Clear</div>
+        </div>
+        <input type="button" value="Query" class="queryBtn">
     </div>
-    <div id="tabholder">
-        <div class="trapezoid"></div>
-        <div class="trapezoid"></div>
-        <div class="trapezoid"></div>
-        <div class="trapezoid"></div>
-    </div>-->
-   <div style="display:flex;height:900px;">
-    <div class="leftSection"></div>
     <div class="rightSection">
-            <div class="top" >No Query Data Available</div>
-            <div class="bottom" id="chartSection" ></div>
+        <div class="top"><p ng-bind="querySectionLabel"></p></div>
+        <div class="bottom" id="chartSection"></div>
 
     </div>
-  </div>
+</div>
     
     <div id="chart"></div>
 
